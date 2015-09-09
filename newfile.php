@@ -2,7 +2,7 @@
 
 	// LOGIN.PHP
 	
-	// errori muutuja peavad igal juhul olemas olema
+	// errori muutujad peavad igal juhul olemas olema
 	$email_error = "";
 	$password_error = "";
 	
@@ -13,13 +13,14 @@
 		
 		//echo "keegi vajutas nuppu";
 		
-		//kontrollin, et e-pot ei ole tuhi
+		//kontrollin, et e-post ei ole tuhi
 		
 		$email_error = "";
 		
 		if (empty($_POST["email"]) ) {
 			$email_error = "See vali on kohustuslik";
 		}
+		// kontrollime, et parool ei ole tuhi
 		if (empty($_POST["password"]) ) {
 			$passweord_error = "See vali on kohustuslik";
 		}
