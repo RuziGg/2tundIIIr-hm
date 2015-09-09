@@ -23,6 +23,16 @@
 		// kontrollime, et parool ei ole tuhi
 		if (empty($_POST["password"]) ) {
 			$passweord_error = "See vali on kohustuslik";
+		} else {
+			
+		//kui oleme siia joudnud, siis parool ei ole tuhi
+		
+			if(strlen($_POST["password"]) < 8) {
+				
+				$password_error = "Peab olema vahemalt 8 tahemarki pikk!";
+				
+			}
+			
 		}
 		
 	}
