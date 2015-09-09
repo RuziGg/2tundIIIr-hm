@@ -1,7 +1,30 @@
 <?php
 
 	// LOGIN.PHP
-
+	
+	// errori muutuja peavad igal juhul olemas olema
+	$email_error = "";
+	$password_error = "";
+	
+	//echo $_POST["email"];
+	
+	//kontrollime et keegi vajutas input nuppu
+	if($_SERVER["REQUEST_METHOD"] == "POST") {
+		
+		//echo "keegi vajutas nuppu";
+		
+		//kontrollin, et e-pot ei ole tuhi
+		
+		$email_error = "";
+		
+		if (empty($_POST["email"]) ) {
+			$email_error = "See vali on kohustuslik";
+		}
+		if (empty($_POST["password"]) ) {
+			$passweord_error = "See vali on kohustuslik";
+		}
+		
+	}
 
 ?>
 <html>
@@ -10,10 +33,12 @@
 </head>
 <body>
 	<h2>Log in</h2>
-		<input type="email" placeholder="E-post"> <br><br>
-		<input type="password" placeholder="Parool"> <br><br>
-		<input type="submit" value="Log in">
-		
+	
+		<form action="newfile.php" method="post" >
+			<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?><br><br>
+			<input name="password" type="password" placeholder="Parool"> <?php echo $email_error; ?><br><br>
+			<input type="submit" value="Log in">
+		</form>
 		
 	<h2>Create user</h2>
 </body>
